@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Symptoms from './Symptoms';
 
-const SymptomsHeader = () => {
+const SymptomsHeader = (props) => {
 
     const [symp,setSymp] = useState([
         {id : 1, header : 'ศีรษะ', title : 'ไข้ +'},
@@ -13,14 +13,15 @@ const SymptomsHeader = () => {
 
   return (
   <div>
-      <h2>ศีรษะ</h2>
-      <Symptoms symp={symp.filter(symp => symp.header === 'ศีรษะ')} />
 
-      <h2>ตา</h2>
-      <Symptoms symp={symp.filter(symp => symp.header === 'ตา')} />
+      {props.head && <h2>ศีรษะ</h2>}
+      {props.head && <Symptoms symp={symp.filter(symp => symp.header === 'ศีรษะ')} />}
 
-      <h2>ปาก และ ลำคอ</h2>
-      <Symptoms symp={symp.filter(symp => symp.header === 'ปาก และ ลำคอ')} />
+      {props.eye && <h2>ตา</h2>}
+      {props.eye && <Symptoms symp={symp.filter(symp => symp.header === 'ตา')} />}
+
+      {props.mouse && <h2>ปาก และ ลำคอ</h2>}
+      {props.mouse && <Symptoms symp={symp.filter(symp => symp.header === 'ปาก และ ลำคอ')} />}
   </div>
   );
 };
