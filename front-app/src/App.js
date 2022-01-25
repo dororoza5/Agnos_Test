@@ -6,13 +6,14 @@ import SymptomsHeader from './component/SymptomsHeader';
 function App() {
   return (
     <div className="App">
-      <div >
+      <div>
         <h1>อาการอะไรที่คุณกังวลมากที่สุด</h1>
         <SearchBox />
       </div>
       <div>
         <SymptomsHeader />
       </div>
+      {/* <img src={require('./img/display_cat/ตา-df.png')}></img> */}
     </div>
     
   );
