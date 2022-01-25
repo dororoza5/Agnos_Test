@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBox from './component/SearchBox';
 import SymptomsHeader from './component/SymptomsHeader';
+import SortTag from './component/SortTag';
 
 function App() {
+
   return (
     <div className="App">
       <div>
@@ -13,9 +15,12 @@ function App() {
       <div>
         <SymptomsHeader />
       </div>
-      {/* <img src={require('./img/display_cat/ตา-df.png')}></img> */}
+      <div>
+        <SortTag title='ศีรษะ'/>
+        <SortTag title='ตา'/>
+        <SortTag title='ปากและลำคอ'/>
+      </div>
     </div>
-    
   );
 }
 
