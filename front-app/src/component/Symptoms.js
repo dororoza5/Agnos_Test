@@ -18,11 +18,14 @@ const Symptoms = ({symp}) => {
         SetIsOpen(!isOpen)
     }
 
+    
+
   return (
   <div>
       {symp.map(symp => (
           <div key={symp.id}>
               <button type='button' onClick={() => handleClick(symp.id)}>{symp.title}</button>
+
               {isOpen && <Popup 
               content={<>
                 <b>Design your Popup</b>

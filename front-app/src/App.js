@@ -10,12 +10,11 @@ function App() {
   const [head, setHead] = useState(true)
   const [eye, setEye] = useState(true)
   const [mouse, setMouse] = useState(true)
-
+  
   return (
     <div className="App">
       <div>
         <h1>อาการอะไรที่คุณกังวลมากที่สุด</h1>
-        <SearchBox />
       </div>
       <div>
         <SymptomsHeader head={head} eye={eye} mouse={mouse}/>
