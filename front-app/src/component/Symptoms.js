@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import Popup from './Popup';
 
-const Symptoms = ({symp}) => {
+const Symptoms = ({symp,handleAddYourSymp}) => {
 
     const [data, setData] = useState([
         {id : 1, content : '', img : ['']},
@@ -27,24 +27,29 @@ const Symptoms = ({symp}) => {
         setImage(data.filter(data => data.id === input.id).map(data => data.img))
     }
 
+    const handleClose = () => {
+        SetIsOpen(!isOpen)
+    }
+
     
 
     return (
     <div>
         {symp.map(symp => (
             <div key={symp.id}>
-                <button type='button' onClick={() => handleClick(symp)}>{symp.title}</button>
+                <button type='button' onClick={() => handleClick(symp)}>{symp.title} +</button>
             </div>
             
         ))}
         
         <Modal 
             show={isOpen} 
-            handleClick={handleClick} 
+            handleClose={handleClose} 
             title={title}
             id={index}
             data={content}
             image={image}
+            handleAddYourSymp = {handleAddYourSymp}
         />
     </div>
   );

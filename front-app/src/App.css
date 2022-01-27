@@ -77,21 +77,32 @@
   font-size: 20px;
 } */
 
+
+/* modal style */
+
 .modal {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(136, 136, 136);
+  background-color: rgba(136, 136, 136, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 
 .modal-content {
-  width: 500px;
+  width: 75%;
   background-color: #fff;
+}
+
+.modal-image {
+  max-width: 20%;
+  height: auto;
+  display: inline-block;
+  padding: 10px 2.5%;
 }
 
 .modal-header {

@@ -6,18 +6,14 @@ const Modal = (props) => {
         return null
     }
 
-    const handleCheck = (data) => {
-        console.log(data)
-    }
-
     const newImageList = props.image.map( (image) => {
         console.log(image)
         if(image.length !== 1){
             return (
                 <div>
-                    <img key={image[0]} src={require(`${image[0]}.png`)}/>
-                    <img key={image[1]} src={require(`${image[1]}.png`)}/>
-                    <img key={image[2]} src={require(`${image[2]}.png`)}/>
+                    <img key={image[0]} src={require(`${image[0]}.png`)} className='modal-image'/>
+                    <img key={image[1]} src={require(`${image[1]}.png`)} className='modal-image'/>
+                    <img key={image[2]} src={require(`${image[2]}.png`)} className='modal-image'/>
                 </div>
                 )
             }else{
@@ -36,8 +32,8 @@ const Modal = (props) => {
                 {newImageList}
             </div>
             <div className='modal-footer'>
-                <button className='button-close' onClick={props.handleClick}>close</button>
-                <button className='button-add' >เพิ่มลงอาการของคุณ</button>
+                <button className='button-close' onClick={props.handleClose}>close</button>
+                <button className='button-add' onClick={() => {props.handleAddYourSymp(props.title); props.handleClose();}}>เพิ่มลงอาการของคุณ</button>
             </div>
         </div>
     </div>
