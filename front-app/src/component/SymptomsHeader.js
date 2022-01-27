@@ -25,7 +25,7 @@ const SymptomsHeader = (props) => {
     const filterSort = (e) => {
         setInputText(e.target.value)
         const newSort = symp.filter((symp) => {
-            if(inputText.length!==0){
+            if(e.target.value.length!==0){
               return symp.title.includes(e.target.value)
             }else{
               return symp
