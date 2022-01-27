@@ -3,6 +3,7 @@ import SearchBox from './SearchBox';
 import Symptoms from './Symptoms';
 import SortTag from './SortTag';
 import YourSymptom from './YourSymptom';
+import {Link} from 'react-router-dom'
 
 const SearchPage = () => {
 
@@ -98,7 +99,10 @@ const SearchPage = () => {
         <SortTag title='ปากและลำคอ' status = {mouse} changeStatus = {setMouse}/>
       </div>
 
-      <button>ต่อไป</button>
+      <Link to={{
+        pathname : '/result', 
+        yourSympList : {yourSympList}}}
+      >ต่อไป</Link>
   </div>
   );
 };
