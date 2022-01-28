@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const FinishPage = () => {
   return (
-  <div>
-      <h1>ขอบคุณที่ใช้บริการครับ</h1>
-      <Link to='/'>กลับหน้าหลัก</Link>
+  <div className='finish-background'>
+      <h1 className='finish-text1'>ขอบคุณที่ใช้บริการครับ</h1>
+      <Link className='go-homepage' to='/'>กลับหน้าหลัก</Link>
   </div>
   );
 };

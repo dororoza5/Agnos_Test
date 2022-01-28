@@ -11,11 +11,14 @@ const ResultPage = () => {
 
 
   return (
-  <div>
-      <h1>อาการของคุณมีดังนี้ใช่หรือไม่</h1>
+  <div className='result-background'>
+      {/* <div className='result-background'/> */}
+      <h1 className='result-text1'>อาการของคุณมีดังนี้ใช่หรือไม่</h1>
       <YourSymptom yourSympList={yourSympList} handleDeleteYourSymptom={handleDeleteYourSymptom}/>
-      <Link to='/'>ย้อนกลับ</Link>
-      <Link to='/finish'>ใช่</Link>
+      <div className='resultpage-link-list'>
+        <Link className='go-homepage' to='/'>ย้อนกลับ</Link>
+        <Link className='go-finishpage' to='/finish'>ใช่</Link>
+      </div>
   </div>
   );
 };

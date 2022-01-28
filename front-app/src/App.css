@@ -254,3 +254,100 @@ h2 {
 }
 
 /* for all ResultPage */
+
+.result-background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(67, 190, 231);
+  left: 0;
+  top: 0;
+}
+
+.result-text1{
+  font-size: 30px;
+  z-index: 1;
+  margin-top: 280px;
+}
+
+.yoursymtom-result{
+  text-align: center;
+  z-index: 1;
+}
+
+.resultpage-button{
+  text-align: center;
+  background-color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid rgb(52, 148, 180);
+  margin: 0px 10px;  
+  border-radius: 5px;
+  color:rgb(52, 148, 180);
+  font-size: 15px;
+  z-index: 1;
+}
+
+.resultpage-link-list{
+  display: inline-block;
+  text-align: center;
+  width: 75%;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+.go-homepage {
+  margin-right: 25%;
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid rgb(52, 148, 180);
+  font-size: 20px;
+  background-color: white;
+  color: rgb(52, 148, 180);
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1;
+}
+
+.go-finishpage{
+  width: 30%;
+  border-radius: 10px;
+  background-color: rgb(52, 148, 180);
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* for all FinishPage */
+
+.finish-background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(67, 190, 231);
+  left: 0;
+  top: 0;
+}
+
+.finish-text1{
+  font-size: 30px;
+  z-index: 1;
+  margin-top: 280px;
+}
+
+.finish-background .go-homepage{
+  margin: 0;
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid rgb(52, 148, 180);
+  font-size: 20px;
+  background-color: white;
+  color: rgb(52, 148, 180);
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1;
+}
+
