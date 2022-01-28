@@ -7,9 +7,10 @@ const YourSymptom = ({yourSympList, handleDeleteYourSymptom}) => {
     // ))
 
   return (
-    <div>
+    <div className='yoursymptom'>
+        <h3 className='text'>อาการของคุณ</h3>
         {yourSympList.map( (symptom) => (
-            <button key={symptom} onClick={() => handleDeleteYourSymptom(symptom)}>{symptom}</button>
+            <button className='searchpage-button' key={symptom} onClick={() => handleDeleteYourSymptom(symptom)}>{symptom} -</button>
         ))}
     </div>
   );

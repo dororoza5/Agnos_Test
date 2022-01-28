@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import Popup from './Popup';
 
 const Symptoms = ({symp,handleAddYourSymp}) => {
 
@@ -36,8 +35,8 @@ const Symptoms = ({symp,handleAddYourSymp}) => {
     return (
     <div>
         {symp.map(symp => (
-            <div key={symp.id}>
-                <button type='button' onClick={() => handleClick(symp)}>{symp.title} +</button>
+            <div className='button-list' key={symp.id}>
+                <button className='searchpage-button' type='button' onClick={() => handleClick(symp)}>{symp.title} +</button>
             </div>
             
         ))}

@@ -13,6 +13,7 @@ const SearchPage = () => {
 
     const [yourSympList, setYourSympList] = useState([])
 
+    //full data
     const [symp,setSymp] = useState([
         {id : 1, header : 'ศีรษะ', title : 'ไข้'},
         {id : 2, header : 'ศีรษะ', title : 'ผมร่วง'},
@@ -23,6 +24,7 @@ const SearchPage = () => {
 
     const [inputText, setInputText] = useState('')
 
+    //partial list(this have to be filtered)
     const [sortInputSymp, setSortInputSymp] = useState([
         {id : 1, header : 'ศีรษะ', title : 'ไข้'},
         {id : 2, header : 'ศีรษะ', title : 'ผมร่วง'},
@@ -31,13 +33,22 @@ const SearchPage = () => {
         {id : 5, header : 'ปาก และ ลำคอ', title : 'ฝ้าขาวที่ลิ้น'}
     ])
 
+    //full list of symptom that has not been add to yoursymptom yet
+    const [deleteSortInputSymp, setDeleteSortInputSymp] = useState([
+      {id : 1, header : 'ศีรษะ', title : 'ไข้'},
+      {id : 2, header : 'ศีรษะ', title : 'ผมร่วง'},
+      {id : 3, header : 'ตา', title : 'ตาเหลือง'},
+      {id : 4, header : 'ตา', title : 'ขี้ตาเยอะ'},
+      {id : 5, header : 'ปาก และ ลำคอ', title : 'ฝ้าขาวที่ลิ้น'}
+    ])
+
     const filterSort = (e) => {
         setInputText(e.target.value)
-        const newSort = symp.filter((symp) => {
+        const newSort = deleteSortInputSymp.filter((deleteSortInputSymp) => {
             if(e.target.value.length!==0){
-              return symp.title.includes(e.target.value)
+              return deleteSortInputSymp.title.includes(e.target.value)
             }else{
-              return symp
+              return deleteSortInputSymp
             }
         })
         setSortInputSymp(newSort)
@@ -46,12 +57,13 @@ const SearchPage = () => {
     const handleAddYourSymp = (title) => {
       setYourSympList(yourSympList => [...yourSympList,title])
       setSortInputSymp(sortInputSymp.filter(sortInputSymp => sortInputSymp.title !== title))
+      setDeleteSortInputSymp(deleteSortInputSymp.filter(deleteSortInputSymp => deleteSortInputSymp.title !== title))
     }
 
     const handleDeleteYourSymptom = (title) => {
       setYourSympList(yourSympList.filter(yourSympList => yourSympList !== title))
       setSortInputSymp(sortInputSymp => [...sortInputSymp,symp.filter( symp => symp.title === title)[0]])
-      console.log(symp.filter( symp => symp.title === title))
+      setDeleteSortInputSymp(deleteSortInputSymp => [...deleteSortInputSymp,symp.filter( symp => symp.title === title)[0]])
     }
 
     // const handleTest = () => {
@@ -60,24 +72,29 @@ const SearchPage = () => {
 
   return (
   <div>
-      <h1>อาการอะไรที่คุณกังวลมากที่สุด</h1>
+      <div className='header'>
+        <h1 className='text'>อาการอะไร<br/>ที่คุณกังวลมากที่สุด</h1>
 
-      <SearchBox inputText={inputText} onChange={filterSort}/>
+        <SearchBox inputText={inputText} onChange={filterSort} />
 
-      <h3>อาการของคุณ</h3>
-
-      <YourSymptom yourSympList={yourSympList} handleDeleteYourSymptom={handleDeleteYourSymptom}/>
-
-      {
-        (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')).length!==0 
-        && head 
-        && <h2>ศีรษะ</h2>
-      }
+          
+        <YourSymptom yourSympList={yourSympList} handleDeleteYourSymptom={handleDeleteYourSymptom}/>
+      </div>
+      
+      <div className='after-header'>
+        {
+          (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')).length!==0 
+          && head 
+          && <h2>ศีรษะ</h2>
+        }
+      </div>
+      
       {head && <Symptoms 
-                  symp={sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')} 
-                  handleAddYourSymp={handleAddYourSymp}
-                />
+          symp={sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')} 
+          handleAddYourSymp={handleAddYourSymp}
+        />
       }
+      
 
       {
         (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ตา')).length!==0

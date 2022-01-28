@@ -128,3 +128,63 @@
   margin-left: 0 auto;
   text-align: right;
 }
+
+.header {
+  background: rgb(67, 190, 231);
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header .text {
+  text-align: left;
+  color: white;
+  padding: 10px 15px;
+  margin: 0px 0px;
+}
+
+h3 {
+  display: inline-block;
+}
+
+.yoursymptom{
+  text-align: left;
+}
+
+.search {
+  width: 75%;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: rgb(52, 148, 180);
+  border: 2px solid rgb(47, 160, 211);
+}
+
+.searh:focus{
+  border: none;
+  border: 4px solid rgb(52, 148, 180);
+}
+
+.searchpage-button {
+  text-align: center;
+  background-color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid rgb(52, 148, 180);
+  margin: 0px 10px;  
+  border-radius: 5px;
+  color:rgb(52, 148, 180);
+}
+.after-header {
+  margin-top: 210px;
+}
+
+.button-list {
+  display: inline-block;
+}
