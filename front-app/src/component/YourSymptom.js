@@ -1,6 +1,6 @@
 import React from 'react';
 
-const YourSymptom = ({yourSympList, handleDeleteYourSymptom}) => {
+const YourSymptom = ({yourSympList, handleDeleteYourSymptom, searchPage}) => {
 
     // const newList = yourSympList.map( (symptom) => (
     //     <button key={symptom} handleDeleteYourSymptom={() => handleDeleteYourSymptom(symptom)}>{symptom}</button>
@@ -8,7 +8,7 @@ const YourSymptom = ({yourSympList, handleDeleteYourSymptom}) => {
 
   return (
     <div className='yoursymptom'>
-        <h3 className='text'>อาการของคุณ</h3>
+        {searchPage && <h3 className='text3'>อาการของคุณ</h3>}
         {yourSympList.map( (symptom) => (
             <button className='searchpage-button' key={symptom} onClick={() => handleDeleteYourSymptom(symptom)}>{symptom} -</button>
         ))}

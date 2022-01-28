@@ -66,28 +66,22 @@ const SearchPage = () => {
       setDeleteSortInputSymp(deleteSortInputSymp => [...deleteSortInputSymp,symp.filter( symp => symp.title === title)[0]])
     }
 
-    // const handleTest = () => {
-    //   console.log(yourSympList)
-    // }
-
   return (
   <div>
       <div className='header'>
-        <h1 className='text'>อาการอะไร<br/>ที่คุณกังวลมากที่สุด</h1>
+        <h1 className='text1'>อาการอะไร<br/>ที่คุณกังวลมากที่สุด</h1>
 
         <SearchBox inputText={inputText} onChange={filterSort} />
 
           
-        <YourSymptom yourSympList={yourSympList} handleDeleteYourSymptom={handleDeleteYourSymptom}/>
+        <YourSymptom yourSympList={yourSympList} handleDeleteYourSymptom={handleDeleteYourSymptom} searchPage={true}/>
       </div>
       
-      <div className='after-header'>
-        {
-          (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')).length!==0 
-          && head 
-          && <h2>ศีรษะ</h2>
-        }
-      </div>
+      {
+        (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')).length!==0 
+        && head 
+        && <h2 className='text2'>ศีรษะ</h2>
+      }
       
       {head && <Symptoms 
           symp={sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ศีรษะ')} 
@@ -99,27 +93,28 @@ const SearchPage = () => {
       {
         (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ตา')).length!==0
         && eye 
-        && <h2>ตา</h2>
+        && <h2 className='text2'>ตา</h2>
       }
       {eye && <Symptoms symp={sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ตา')} handleAddYourSymp={handleAddYourSymp}/>}
 
       {
         (sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ปาก และ ลำคอ')).length!==0
         && mouse 
-        && <h2>ปาก และ ลำคอ</h2>
+        && <h2 className='text2'>ปาก และ ลำคอ</h2>
       }
       {mouse && <Symptoms symp={sortInputSymp.filter(sortInputSymp => sortInputSymp.header === 'ปาก และ ลำคอ')} handleAddYourSymp={handleAddYourSymp}/>}
 
-      <div>
-        <SortTag title='ศีรษะ' status = {head} changeStatus = {setHead}/>
-        <SortTag title='ตา' status = {eye} changeStatus = {setEye}/>
-        <SortTag title='ปากและลำคอ' status = {mouse} changeStatus = {setMouse}/>
+      <div >
+        <SortTag className='sorttag1' title='ศีรษะ' status = {head} changeStatus = {setHead}/>
+        <SortTag className='sorttag2' title='ตา' status = {eye} changeStatus = {setEye}/>
+        <SortTag className='sorttag3' title='ปากและลำคอ' status = {mouse} changeStatus = {setMouse}/>
       </div>
 
-      <Link to={{
+      {yourSympList.length === 0 && <h3 className='unlink-next-button'>ต่อไป</h3>}
+      {yourSympList.length !== 0 && <Link className='link-next-button' to={{
         pathname : '/result', 
         yourSympList : {yourSympList}}}
-      >ต่อไป</Link>
+      >ต่อไป</Link>}
   </div>
   );
 };

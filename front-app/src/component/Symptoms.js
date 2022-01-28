@@ -33,7 +33,7 @@ const Symptoms = ({symp,handleAddYourSymp}) => {
     
 
     return (
-    <div>
+    <div className='left-align'>
         {symp.map(symp => (
             <div className='button-list' key={symp.id}>
                 <button className='searchpage-button' type='button' onClick={() => handleClick(symp)}>{symp.title} +</button>

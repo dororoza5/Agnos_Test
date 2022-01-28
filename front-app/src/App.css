@@ -37,46 +37,6 @@
   }
 }
 
-/* Popup style */
-/* .popup-box {
-  position: fixed;
-  background: #00000050;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-}
- 
-.box {
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
-  height: auto;
-  max-height: 70vh;
-  margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
-  overflow: auto;
-}
- 
-.close-icon {
-  content: 'x';
-  cursor: pointer;
-  position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
-} */
-
 
 /* modal style */
 
@@ -91,22 +51,34 @@
   align-items: center;
   justify-content: center;
   overflow: auto;
+  z-index: 1;
 }
 
 .modal-content {
   width: 75%;
   background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal-image-list {
+  text-align: center;
 }
 
 .modal-image {
-  max-width: 20%;
+  max-width: 25%;
   height: auto;
   display: inline-block;
   padding: 10px 2.5%;
 }
 
 .modal-header {
-  margin: 0;
+  margin: 0px 10px;
+  font-size: 18px;
+}
+
+.modal-body {
+  margin: 10px;
+  font-size: 15px;
 }
 
 .modal-footer {
@@ -115,37 +87,63 @@
   border-bottom: 1px solid #eee;
   align-content: center;
   margin: auto;
+  text-align: center;
 }
 
 .button-close{
-  margin-right: 20px;
-  text-align: left;
-  border-radius: 40%;
-  border: none;
+  margin-right: 25%;
+  width: 25%;
+  border-radius: 10px;
+  border: 2px solid rgb(52, 148, 180);
+  font-size: 15px;
+  background-color: white;
+  color: rgb(52, 148, 180);
 }
 
 .button-add{
-  margin-left: 0 auto;
-  text-align: right;
+  width: 25%;
+  border-radius: 10px;
+  background-color: rgb(52, 148, 180);
+  color: white;
+  font-size: 15px;
 }
 
 .header {
   background: rgb(67, 190, 231);
   padding: 10px 0;
   text-align: center;
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-.header .text {
+
+/* for all SearchPage function */
+
+.header .text1 {
   text-align: left;
   color: white;
   padding: 10px 15px;
   margin: 0px 0px;
+  font-size: 30px;
 }
+
+.text2 {
+  font-size: 20px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.yoursymptom .text3 {
+  text-align: left;
+  color: white;
+  padding: 10px 15px;
+  margin: 0px 0px;
+  font-size: 18px;
+}
+
 
 h3 {
   display: inline-block;
@@ -163,6 +161,7 @@ h3 {
   border-radius: 10px;
   color: rgb(52, 148, 180);
   border: 2px solid rgb(47, 160, 211);
+  font-size: 15px;
 }
 
 .searh:focus{
@@ -180,11 +179,78 @@ h3 {
   margin: 0px 10px;  
   border-radius: 5px;
   color:rgb(52, 148, 180);
+  font-size: 15px;
 }
-.after-header {
-  margin-top: 210px;
-}
+
 
 .button-list {
   display: inline-block;
 }
+
+h2 {
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+
+.sorttag1 {
+  text-align: left;
+  position: fixed;
+  right:30px;
+  top: 300px;
+}
+
+.sorttag2 {
+  text-align: left;
+  position: fixed;
+  right:30px;
+  top: 350px;
+}
+
+.sorttag3 {
+  text-align: left;
+  position: fixed;
+  right:30px;
+  top: 400px;
+}
+
+.button-image {
+  background: none;
+  border: none;
+  border-radius: 100%;
+}
+
+.sort-image {
+  width: 50px;
+  height: auto;
+}
+
+.unlink-next-button {
+  border-radius: 10px;
+  border: 3px solid lightgray;
+  width: 75%;
+  padding: 5px 10px;
+  margin: 20px 0px;
+  box-sizing: border-box;
+  color: lightgray;
+  cursor: default;
+}
+
+.link-next-button {
+  border-radius: 10px;
+  border: 3px solid limegreen;
+  width: 75%;
+  padding: 5px 10px;
+  margin: 20px 0px;
+  box-sizing: border-box;
+  color: white;
+  background-color: limegreen;
+  cursor: default;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.left-align {
+  text-align: left;
+}
+
+/* for all ResultPage */

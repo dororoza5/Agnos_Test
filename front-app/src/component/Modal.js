@@ -10,7 +10,7 @@ const Modal = (props) => {
         console.log(image)
         if(image.length !== 1){
             return (
-                <div>
+                <div className='modal-image-list'>
                     <img key={image[0]} src={require(`${image[0]}.png`)} className='modal-image'/>
                     <img key={image[1]} src={require(`${image[1]}.png`)} className='modal-image'/>
                     <img key={image[2]} src={require(`${image[2]}.png`)} className='modal-image'/>
@@ -32,8 +32,8 @@ const Modal = (props) => {
                 {newImageList}
             </div>
             <div className='modal-footer'>
-                <button className='button-close' onClick={props.handleClose}>close</button>
-                <button className='button-add' onClick={() => {props.handleAddYourSymp(props.title); props.handleClose();}}>เพิ่มลงอาการของคุณ</button>
+                <button className='button-close' onClick={props.handleClose}>กลับ</button>
+                <button className='button-add' onClick={() => {props.handleAddYourSymp(props.title); props.handleClose();}}>เลือกอาการนี้</button>
             </div>
         </div>
     </div>
